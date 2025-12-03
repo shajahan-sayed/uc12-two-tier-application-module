@@ -32,6 +32,8 @@ resource "aws_instance" "ec2_alb" {
     subnet_id = var.subnet_id
     key_name = var.key_name
     vpc_security_group_ids = [aws_security_group.ec2_sg1.id]
+
+    user_data = var.user_data
     
     tags = {
       Name = "ec2_alb"
